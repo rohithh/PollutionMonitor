@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Pollution Monitor</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_button_fragment">Hello Button Fragment</string>
+    <string name="hello_graph_fragment">Hello Graph Fragment</string>
+</resources>

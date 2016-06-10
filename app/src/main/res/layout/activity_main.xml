@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/chart1"
+    android:background="@android:color/holo_green_light"
+     android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/iv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/iv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:text="Check Pollution Levels"
+        android:id="@+id/button"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="63dp"
+        android:textColor="#FFFFFF"
+        android:background="#003D11"
+        android:radius="100dp"
+        android:fontFamily="monospace"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:onClick="onClick"
+
+        />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:text="REAL TIME GRAPH"
+        android:id="@+id/button2"
+        android:textColor="#FFFFFF"
+        android:background="#003D11"
+        android:radius="100dp"
+        android:fontFamily="monospace"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:onClick="toGraphActivity"
+        android:layout_marginBottom="56dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/button" />
+
+
+    <!--
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/background_light"
+            android:minWidth="300dp"
+            android:maxWidth="300dp"
+            android:indeterminate="false"
+             android:indeterminateTint="@color/colorPrimaryDark"
+               /> -->
+
+</RelativeLayout>
