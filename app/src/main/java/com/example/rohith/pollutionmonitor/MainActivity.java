@@ -65,7 +65,7 @@ public class MainActivity extends Activity {
         greenText1.setTextColor(Color.YELLOW);
         greenText1.setTypeface(Typeface.MONOSPACE);
          greenText1.setX(250);
-        greenText1.setY(1000);
+        greenText1.setY(1000);    
         relativeLayout = (RelativeLayout) findViewById(R.id.chart1);
         relativeLayout.addView(greenText1);
 
@@ -184,7 +184,7 @@ public class MainActivity extends Activity {
     }
 
     public void toGraphActivity(View view){
-        Intent intent = new Intent(MainActivity.this, GraphActivity.class);
+         Intent intent = new Intent(MainActivity.this, GraphActivity.class);
         startActivity(intent);
     }
 
