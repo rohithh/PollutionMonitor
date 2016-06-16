@@ -71,9 +71,11 @@ catch(Exception e){
         return  res;
     }
 
-    public String databaseToString(){
+    public String[] databaseToString(){
         System.out.println("Inside databaseToString");
-        String dbString = "";
+        String dbString[] = new String[2];
+        dbString[0] = "";
+        dbString[1] = "";
         SQLiteDatabase db = getReadableDatabase();
         String query = "SELECT * FROM " + DATA_TABLE_NAME;
         Cursor c = db.rawQuery(query, null);
@@ -82,9 +84,8 @@ catch(Exception e){
     //    System.out.println(c.getString(2));
 
          while(!c.isLast()){
-            dbString += c.getString(c.getColumnIndex(DATA_DATE)) + "\n";
-
-
+            dbString[0] += c.getString(c.getColumnIndex(DATA_DATE)) + "\n";
+            dbString[1] += c.getString(c.getColumnIndex(DATA_VALUE)) + "\n";
              c.moveToNext();
         }
         //System.out.println(dbString);

@@ -65,7 +65,7 @@ public class MainActivity extends Activity {
         greenText1.setTextColor(Color.YELLOW);
         greenText1.setTypeface(Typeface.MONOSPACE);
          greenText1.setX(250);
-        greenText1.setY(1000);    
+        greenText1.setY(1000);
         relativeLayout = (RelativeLayout) findViewById(R.id.chart1);
         relativeLayout.addView(greenText1);
 
@@ -97,7 +97,7 @@ public class MainActivity extends Activity {
         // Initialize a new Paint instance to draw the Rectangle
         Paint paint = new Paint();
         paint.setStyle(Paint.Style.FILL);
-        paint.setARGB(255,0,61,17);
+        paint.setARGB(255,0,32,9);
         paint.setAntiAlias(true);
 
 
