@@ -48,7 +48,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+/*
         TextView greenText = new TextView(this);
         greenText.setTextSize(15);
         greenText.setText("---- Low Pollution");
@@ -101,11 +101,11 @@ public class MainActivity extends Activity {
         paint.setAntiAlias(true);
 
 
-        canvas.drawRect(220,900, 1300, 1400, paint);
+       // canvas.drawRect(220,900, 1300, 1400, paint);
+        canvas.drawRect(200,500,1300,1000   ,paint);
         // Display the newly created bitmap on app interface
         mImageView.setImageBitmap(bitmap);
-
-
+*/
     }
 
 
@@ -115,14 +115,14 @@ public class MainActivity extends Activity {
         ImageView mImageView = (ImageView) findViewById(R.id.iv);
 
         Bitmap bitmap = Bitmap.createBitmap(
-                findViewById(R.id.chart1).getWidth(), // Width
-                findViewById(R.id.chart1).getHeight(), // Height
+                findViewById(R.id.iv).getWidth(), // Width
+                findViewById(R.id.iv).getHeight(), // Height
                 Bitmap.Config.ARGB_8888 // Config
         );
 
         // Initialize a new Canvas instance
         Canvas canvas = new Canvas(bitmap);
-
+/*
         // Draw a solid color to the canvas background
         canvas.drawColor(findViewById(R.id.chart1).getSolidColor());
 
@@ -136,38 +136,52 @@ public class MainActivity extends Activity {
         int padding = 100;
 
         // Initialize a new Rect object
-        Rect rectangle = new Rect(
+      /*  Rect rectangle = new Rect(
                 findViewById(R.id.button).getLeft(), // Left
                 canvas.getHeight()/2-400, // Top
                 findViewById(R.id.button).getRight(), // Right
                 canvas.getHeight()/2  + findViewById(R.id.button).getHeight()-400 // Bottom
-        );
+        );*/
+/*
+        Rect rectangle = new Rect(findViewById(R.id.button).getLeft(),
+                                  500,
+                                  findViewById(R.id.button).getRight(),
+                                  700);
 
         // Finally, draw the rectangle on the canvas
         canvas.drawRect(rectangle,paint);
 
         // Display the newly created bitmap on app interface
         mImageView.setImageBitmap(bitmap);
-        int pollutionLevelColor = findViewById(R.id.button).getLeft()+ (int)Math.floor((Math.random()*(canvas.getWidth()- 2*findViewById(R.id.button).getLeft())));
-        Rect rectangleInside = new Rect(
+*/
+        int pollutionLevelColor = findViewById(R.id.button).getLeft()+ (int)Math.floor((Math.random()*(findViewById(R.id.iv).getWidth()-findViewById(R.id.button).getLeft())));
+    /*    Rect rectangleInside = new Rect(
             findViewById(R.id.button).getLeft(),
             canvas.getHeight()/2-400,
             pollutionLevelColor,
              canvas.getHeight()/2  + findViewById(R.id.button).getHeight()-400
-        );
+        );*/
 
+
+        Rect rectangleInside = new Rect(0,
+                                        0   ,
+                                        pollutionLevelColor,
+                                        findViewById(R.id.iv).getTop()+findViewById(R.id.iv).getHeight()
+                                        );
+
+        System.out.println("TEST : " + findViewById(R.id.iv).getTop() + " : " + (findViewById(R.id.iv).getTop()+findViewById(R.id.iv).getHeight()));
         Paint paint1 = new Paint();
         System.out.println("pollutionLevelColor = " + pollutionLevelColor);
-        System.out.println("(canvas.getWidth()+findViewById(R.id.button).getLeft()-findViewById(R.id.button).getLeft()) = "
+        System.out.println(" "
                 + canvas.getWidth() + "-"
                 + findViewById(R.id.button).getLeft() + "-" + findViewById(R.id.button).getLeft() + " = "  +
                 (canvas.getWidth()-findViewById(R.id.button).getLeft()-findViewById(R.id.button).getLeft()));
 
-        double colorValue =  ((pollutionLevelColor/788.0));//Color.GREEN;Color.YELLOW;Color.RED;
-        if(colorValue > 0.9){
+        double colorValue =  (((double)pollutionLevelColor/(double)findViewById(R.id.iv).getWidth()));//Color.GREEN;Color.YELLOW;Color.RED;
+        if(colorValue > 0.8){
             paint1.setColor(Color.RED);
         }
-        else if(colorValue > 0.6 && colorValue < 0.9){
+        else if(colorValue > 0.5 && colorValue < 0.8){
             paint1.setColor(Color.YELLOW);
         }
         else{
